@@ -121,18 +121,6 @@ quiz-master-arena/
 
 ---
 
-## 🚀 Future Improvements
-
-- Import Answer Key from CSV
-- Export Results as PDF
-- Multiple Test Support
-- Question Bookmarking
-- Test History
-- Dark / Light Mode
-- Keyboard Shortcuts
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License.

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Quiz Results</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="result-container">
+
+        <h1>📊 Quiz Analysis</h1>
+        <p class="subtitle">
+            Your performance summary and detailed answer review
+        </p>
+
+        <!-- Summary Cards -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card green">
+                <h3>✅ Correct</h3>
+                <span id="correct">0</span>
+            </div>
+
+            <div class="summary-card red">
+                <h3>❌ Incorrect</h3>
+                <span id="incorrect">0</span>
+            </div>
+
+            <div class="summary-card blue">
+                <h3>🎯 Score</h3>
+                <span id="score">0</span>
+            </div>
+
+            <div class="summary-card purple">
+                <h3>📈 Percentage</h3>
+                <span><span id="percentage">0</span>%</span>
+            </div>
+
+        </div>
+
+        <!-- Answer Review -->
+
+        <div class="review-section">
+
+            <h2>📋 Answer Review</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="resultTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="bottom-buttons">
+
+            <button onclick="window.location.href='index.html'" class="submit-btn">
+                🔄 Take Another Quiz
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const data = JSON.parse(localStorage.getItem("quizResults"));
+
+        if(data){
+
+            document.getElementById("correct").textContent=data.correct;
+            document.getElementById("incorrect").textContent=data.incorrect;
+            document.getElementById("score").textContent=data.score;
+            document.getElementById("percentage").textContent=data.percentage;
+
+            const tbody=document.getElementById("resultTable");
+
+            data.answers.forEach(({question,yourAnswer,correctAnswer,isCorrect})=>{
+
+                const row=document.createElement("tr");
+
+                row.className=isCorrect ? "correct-row":"incorrect-row";
+
+                row.innerHTML=`
+
+                    <td>${question}</td>
+
+                    <td>${yourAnswer.toUpperCase()}</td>
+
+                    <td>${correctAnswer.toUpperCase()}</td>
+
+                    <td>${isCorrect ? "✅ Correct":"❌ Incorrect"}</td>
+
+                `;
+
+                tbody.appendChild(row);
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

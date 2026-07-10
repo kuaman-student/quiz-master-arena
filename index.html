@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Quiz Master Arena</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🚀 Quiz Master Arena</h1>
+        <p class="subtitle">
+            Practice MCQs • Track Performance • Improve Accuracy
+        </p>
+
+        <!-- Score Cards -->
+
+        <div class="score-board">
+
+            <div class="score-card correct-card">
+                <h3>✅ Correct</h3>
+                <p id="correct">0</p>
+            </div>
+
+            <div class="score-card incorrect-card">
+                <h3>❌ Incorrect</h3>
+                <p id="incorrect">0</p>
+            </div>
+
+        </div>
+
+        <!-- Quiz -->
+
+        <div class="quiz-box">
+
+            <input
+                type="number"
+                id="questionNumber"
+                placeholder="📌 Enter Question Number"
+                min="1">
+
+            <input
+                type="text"
+                id="userAnswer"
+                placeholder="✍️ Enter Answer (A / B / C / D)"
+                maxlength="1">
+
+            <button class="submit-btn" onclick="submitAnswer()">
+                Submit Answer
+            </button>
+
+        </div>
+
+        <!-- Result -->
+
+        <div id="resultDisplay" class="result-text"></div>
+
+        <!-- Action Buttons -->
+
+        <div class="action-buttons">
+
+            <button onclick="finishQuiz()" class="finish-btn">
+                🏁 Finish Quiz
+            </button>
+
+            <button onclick="editAnswerKey()" class="secondary-btn">
+                ⚙️ Edit Answer Key
+            </button>
+
+            <button onclick="resetAnswerKey()" class="danger-btn">
+                🔄 Reset Answer Key
+            </button>
+
+        </div>
+
+        <!-- Timer -->
+
+        <div class="timer-section">
+
+            <h2>⏱️ Study Timer</h2>
+
+            <input
+                type="number"
+                id="timerInput"
+                placeholder="Enter Time (seconds)"
+                min="1">
+
+            <button class="timer-btn" onclick="startTimer()">
+                Start Timer
+            </button>
+
+            <div id="timerDisplay">
+                ⏳ Ready
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Sounds -->
+
+    <audio id="correctSound"
+        src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg">
+    </audio>
+
+    <audio id="wrongSound"
+        src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg">
+    </audio>
+
+    <audio id="celebrateSound"
+        src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg">
+    </audio>
+
+    <audio id="alarmSound"
+        src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

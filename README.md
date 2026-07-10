@@ -137,3 +137,8 @@ Indian Institute of Technology Mandi (2026–2030)
 🔗 **GitHub:** https://github.com/kuaman-student
 
 💼 **LinkedIn:** https://www.linkedin.com/in/aman-kumar-a94464418/
+
+---
+If you have any suggestions or feedback, feel free to open an issue.
+
+⭐ If you found this repository useful, consider giving it a star!
